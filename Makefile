@@ -1,13 +1,15 @@
-all: convert frames rom
+all: test
 
-convert:
+video:
 	bash frames.sh
 
-frames:
+convert:
 	python frames.py
 
-rom:
-	sjasm -s main.asm main.rom
+msx1:
+	sjasm -s msx1.asm msx1.rom
+	openmsx -machine msx1 -carta msx1.rom
 
-test: rom
-	openmsx -machine msx1 -carta main.rom
+turbor:
+	sjasm -s turbor.asm turbor.rom
+	openmsx -machine turbor -carta turbor.rom

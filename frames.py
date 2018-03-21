@@ -4,7 +4,7 @@ from PIL import Image
 import glob
 import lz77
 
-HEIGHT = 21
+HEIGHT = 24
 
 def convert_frame(fname, oname):
     with open(oname, "w") as out:
