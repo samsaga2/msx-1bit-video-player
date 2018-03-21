@@ -5,6 +5,7 @@
 
   module main
 
+skip # 1
 current # 2
 page # 1
 
@@ -31,9 +32,28 @@ start:
   ld (current),hl
   xor a
   ld (page),a
-.loop:
+  ld (skip),a
+  ;;  hook
+  ld a,0xc3
+  ld (bios.H_TIMI),a
+  ld hl,loop
+  ld (bios.H_TIMI+1),hl
+  ei
+  jp $
+
+
+loop:
+  ld a,(skip)
+  or a
+  ret nz
+  ld a,1
+  ld (skip),a
+  di
   call next_frame
-  jp .loop
+  ei
+  xor a
+  ld (skip),a
+  ret
 
 
 clear_color:
@@ -102,7 +122,9 @@ load_frame:
   pop hl
   jp uncompress.to_vram_write
 
+
   include uncompress.asm
+
 
   module frames
   include out/frames.asm
