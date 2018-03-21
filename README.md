@@ -11,8 +11,10 @@
 
 ## compile
 
-make
-
+1. copy a video as test.mp4
+2. make video
+3. make convert
+4. make msx1 or make turbor
 
 ## test
 

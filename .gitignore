@@ -2,3 +2,6 @@
 __pycache__
 main.lst
 main.sym
+test.mp4
+frame/*
+out/*
