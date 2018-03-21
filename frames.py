@@ -44,7 +44,7 @@ def convert_frames():
                 page += 1
                 page_size = 0x2000
                 if page == 64:
-                    return
+                    break
             page_size -= frame_size
             total_size += frame_size
 
