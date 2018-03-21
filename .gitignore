@@ -1,7 +1,7 @@
 *.pyc
 __pycache__
-main.lst
-main.sym
-test.mp4
+*.lst
+*.sym
+*.mp4
 frame/*
 out/*
