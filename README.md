@@ -1,18 +1,19 @@
-MSX 1-bit video player
+# MSX 1-bit video player
 
-### Requeriments
+## Requeriments
 
-linux
-python3
-ffmpeg
-pillow
-sjasm
+- linux
+- python3
+- ffmpeg
+- imagemagick
+- pillow
+- sjasm
 
-### compile
+## compile
 
 make
 
 
-### test
+## test
 
 openmsx -machine msx1 -carta main.rom
